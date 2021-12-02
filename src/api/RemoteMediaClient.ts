@@ -149,6 +149,9 @@ export default class RemoteMediaClient {
     return Native.removeFromQueue(itemId)
   }
 
+  jumpToItemWithID(itemId:number) {
+    return Native.queueJumpToItemWithID(itemId);
+  }
 
 
   /**
