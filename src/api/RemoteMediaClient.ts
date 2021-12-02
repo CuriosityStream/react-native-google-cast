@@ -145,7 +145,7 @@ export default class RemoteMediaClient {
 
 
   /*Removes an item from the queue by ItemId*/ 
-  removeFromQueue(itemId: number):Promise<void> {
+  removeAFromQueue(itemId: number){
     return Native.removeFromQueue(itemId)
   }
 
