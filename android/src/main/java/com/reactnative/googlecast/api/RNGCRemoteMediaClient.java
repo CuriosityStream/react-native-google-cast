@@ -166,15 +166,16 @@ public class RNGCRemoteMediaClient extends ReactContextBaseJavaModule implements
     }
 
 @ReactMethod
-  public void queueJumpToItemWithID(final int itemId,final Promise promise) {
+  public void queueJumpToItemWithID(final int itemId,final long playPosition,final Promise promise) {
     with.withX(new With.WithXPromisify<RemoteMediaClient>() {
       @Override
       public PendingResult execute(RemoteMediaClient client) {
         ReadableMap customData = null;
-        return client.queueJumpToItem(itemId,RNGCJSONObject.fromJson(customData));
+        return client.queueJumpToItem(itemId,playPosition,RNGCJSONObject.fromJson(customData));
       }
     }, promise);
   }
+
 
 
   @ReactMethod
