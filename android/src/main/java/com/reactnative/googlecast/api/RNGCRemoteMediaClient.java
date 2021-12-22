@@ -171,7 +171,7 @@ public class RNGCRemoteMediaClient extends ReactContextBaseJavaModule implements
       @Override
       public PendingResult execute(RemoteMediaClient client) {
         ReadableMap customData = null;
-        return client.queueJumpToItem(itemId,playPosition,RNGCJSONObject.fromJson(customData));
+        return client.queueJumpToItem(itemId,(long)playPosition,RNGCJSONObject.fromJson(customData));
       }
     }, promise);
   }
