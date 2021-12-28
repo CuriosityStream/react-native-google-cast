@@ -139,6 +139,21 @@ public class RNGCRemoteMediaClient extends ReactContextBaseJavaModule implements
 
   @ReactMethod
   public void
+  queueInsertAndPlayItemSmall(final ReadableMap item, @Nullable final Integer beforeItemId,
+                         @Nullable final ReadableMap customData, final Promise promise) {
+    with.withX(new With.WithXPromisify<RemoteMediaClient>() {
+      @Override
+      public PendingResult execute(RemoteMediaClient client) {
+        return client.queueInsertAndPlayItem(
+          RNGCMediaQueueItem.fromJson(item), beforeItemId,
+          RNGCJSONObject.fromJson(customData));
+      }
+    }, promise);
+  }
+
+
+  @ReactMethod
+  public void
   queueInsertItems(final ReadableArray items, @Nullable final Integer beforeItemId,
                    @Nullable final ReadableMap customData, final Promise promise) {
     with.withX(new With.WithXPromisify<RemoteMediaClient>() {

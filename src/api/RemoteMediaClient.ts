@@ -113,6 +113,18 @@ export default class RemoteMediaClient {
     )
   }
 
+  queueInsertAndPlayItemSmall(
+    item: MediaQueueItem,
+    beforeItemId?: number,
+    customData?: object
+  ): Promise<void> {
+    return Native.queueInsertAndPlayItemSmall(
+      item,
+      beforeItemId, 
+      customData
+    )
+  }
+
   /**
    * Inserts a single item into the queue.
    *
