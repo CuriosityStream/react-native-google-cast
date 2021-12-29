@@ -149,6 +149,7 @@ RCT_EXPORT_METHOD(queueInsertItems: (NSArray<GCKMediaQueueItem *> *) items
 }
 
 RCT_EXPORT_METHOD(queueJumpToItemWithID: (NSUInteger) itemID
+                  playPosition: (NSTimeInterval) playPosition
                   resolver: (RCTPromiseResolveBlock) resolve
                   rejecter: (RCTPromiseRejectBlock) reject) {
 
